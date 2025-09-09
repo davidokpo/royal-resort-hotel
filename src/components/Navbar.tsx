@@ -11,7 +11,7 @@ export default function Navbar() {
     { path: '/restaurant', label: 'Restaurant' },
     { path: '/cafe', label: 'Cafe' },
     { path: '/garden', label: 'Garden' },
-    { path: '/bookings', label: 'lstte' },
+    { path: '/bookings', label: 'Booking' },
   ];
 
   return (

@@ -22,11 +22,12 @@ export default function Rooms() {
     email: '',
     phone: '',
     specialRequests: '',
-    selectedRoom: ''
+    selectedRoom: '',
+    price: '',
   });
 
   const handleBooking = (roomName: string, price: number) => {
-    setBookingData(prev => ({ ...prev, selectedRoom: roomName, price }));
+    setBookingData(prev => ({ ...prev, selectedRoom: roomName, price: price.toString() }));
   };
 
   const saveBookingToDatabase = (booking: any) => {
@@ -61,7 +62,7 @@ export default function Rooms() {
     }
     
     const nights = Math.ceil((checkOut!.getTime() - checkIn!.getTime()) / (1000 * 60 * 60 * 24));
-    const totalCost = nights * (bookingData.price || 0);
+    const totalCost = nights * (Number(bookingData.price) || 0);
     
     // Create booking object for database
     const bookingDetails = {
@@ -82,7 +83,7 @@ export default function Rooms() {
     const savedBooking = saveBookingToDatabase(bookingDetails);
     
     if (savedBooking) {
-      alert(`✅ Booking Confirmed & Saved!\n\nBooking ID: ${savedBooking.id}\nGuest: ${bookingData.name}\nRoom: ${bookingData.selectedRoom}\nCheck-in: ${format(checkIn!, 'PPP')}\nCheck-out: ${format(checkOut!, 'PPP')}\nGuests: ${guests}\nNights: ${nights}\nTotal Cost: $${totalCost}\n\nYour booking has been saved to our database.\nWe'll contact you at ${bookingData.email} to confirm your reservation.\nPayment can be made upon arrival at Peace Royal Resort.`);
+      alert(`✅ Booking Confirmed & Saved!\n\nBooking ID: ₦{savedBooking.id}\nGuest: ₦{bookingData.name}\nRoom: ₦{bookingData.selectedRoom}\nCheck-in: ₦{format(checkIn!, 'PPP')}\nCheck-out: ₦{format(checkOut!, 'PPP')}\nGuests: ₦{guests}\nNights: ₦{nights}\nTotal Cost: ₦₦{totalCost}\n\nYour booking has been saved to our database.\nWe'll contact you at ₦{bookingData.email} to confirm your reservation.\nPayment can be made upon arrival at Peace Royal Resort.`);
       
       console.log('Booking saved successfully:', savedBooking);
     } else {
@@ -95,7 +96,8 @@ export default function Rooms() {
       email: '',
       phone: '',
       specialRequests: '',
-      selectedRoom: ''
+      selectedRoom: '',
+      price: '',
     });
     setCheckIn(undefined);
     setCheckOut(undefined);
@@ -106,7 +108,7 @@ export default function Rooms() {
     {
       id: 1,
       name: 'Deluxe Tech Suite',
-      price: 150,
+      price: 25000,
       image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&h=400&fit=crop',
       features: [
         'Ultra-fast fiber internet',
@@ -122,7 +124,7 @@ export default function Rooms() {
     {
       id: 2,
       name: 'Executive Work Haven',
-      price: 250,
+      price: 3000,
       image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
       features: [
         'Dedicated fiber line',
@@ -250,7 +252,7 @@ export default function Rooms() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-blue-600">${room.price}</div>
+                    <div className="text-2xl font-bold text-blue-600">₦{room.price}</div>
                     <div className="text-sm text-gray-500">per night</div>
                   </div>
                 </div>
@@ -276,12 +278,12 @@ export default function Rooms() {
                       style={{backgroundColor: '#001916'}}
                       onClick={() => handleBooking(room.name, room.price)}
                     >
-                      Book Now - ${room.price}/night
+                      Book Now - ₦{room.price}/night
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-md">
                     <DialogHeader>
-                      <DialogTitle>Book {room.name} - ${room.price}/night</DialogTitle>
+                      <DialogTitle>Book {room.name} - ₦{room.price}/night</DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4">
                       <div>

@@ -17,21 +17,21 @@ export default function Restaurant() {
     breakfast: [
       {
         name: 'Tech Stack Pancakes',
-        price: 18,
+        price: 500,
         description: 'Fluffy pancakes layered like code, served with maple syrup and berry compote',
         dietary: ['vegetarian'],
         image: 'https://www.tasteatlas.com/images/dishes/41ca6dfc48714647a813a6c1333a9e94.jpg'
       },
       {
         name: 'Full Stack Breakfast',
-        price: 25,
+        price: 2500,
         description: 'Eggs, bacon, sausage, hash browns, toast - everything you need to fuel your coding session',
         dietary: [],
         image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=300&h=200&fit=crop'
       },
       {
         name: 'Debug Coffee & Croissant',
-        price: 12,
+        price: 1000,
         description: 'Artisan coffee with freshly baked croissant to help you debug your morning',
         dietary: ['vegetarian'],
         image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=200&fit=crop'
@@ -40,14 +40,14 @@ export default function Restaurant() {
     lunch: [
       {
         name: 'API Burger',
-        price: 22,
+        price: 2000,
         description: 'Premium beef patty with all the right endpoints - lettuce, tomato, cheese, and secret sauce',
         dietary: [],
         image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop'
       },
       {
         name: 'Cloud Storage Salad',
-        price: 19,
+        price: 1000,
         description: 'Mixed greens with grilled chicken, stored in layers of flavor with vinaigrette',
         dietary: ['gluten-free'],
         image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop'
@@ -244,7 +244,7 @@ export default function Restaurant() {
                         <CardContent className="p-4">
                           <div className="flex justify-between items-start mb-2">
                             <h3 className="font-semibold text-lg">{item.name}</h3>
-                            <span className="text-lg font-bold text-red-600">${item.price}</span>
+                            <span className="text-lg font-bold text-red-600">₦{item.price}</span>
                           </div>
                           <p className="text-gray-600 text-sm mb-3">{item.description}</p>
                           {item.dietary.length > 0 && (
@@ -252,7 +252,7 @@ export default function Restaurant() {
                               {item.dietary.map((diet) => (
                                 <Badge
                                   key={diet}
-                                  className={`text-xs ${getDietaryBadgeColor(diet)}`}
+                                  className={`text-xs ₦{getDietaryBadgeColor(diet)}`}
                                 >
                                   {diet}
                                 </Badge>

@@ -62,45 +62,45 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" asChild>
-              <Link to="/rooms">
+            <Link to="/rooms">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
                   <Bed className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Rooms</h3>
                   <p className="text-gray-600">Deluxe & Executive rooms with premium amenities</p>
                 </CardContent>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
             
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" asChild>
-              <Link to="/restaurant">
+            <Link to="/restaurant">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
                   <Utensils className="h-12 w-12 text-red-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Restaurant</h3>
                   <p className="text-gray-600">Fine dining with international cuisine</p>
                 </CardContent>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
             
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" asChild>
-              <Link to="/cafe">
+            <Link to="/cafe">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
                   <Coffee className="h-12 w-12 text-brown-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Cafe</h3>
                   <p className="text-gray-600">Co-working space with premium coffee</p>
                 </CardContent>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
             
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" asChild>
-              <Link to="/garden">
+            <Link to="/garden">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
                   <TreePine className="h-12 w-12 text-green-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Garden</h3>
                   <p className="text-gray-600">Event space for sip & paint, networking</p>
                 </CardContent>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>

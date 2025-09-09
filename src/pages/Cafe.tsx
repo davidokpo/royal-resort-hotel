@@ -176,7 +176,7 @@ export default function Cafe() {
                 <div className="border rounded-lg p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-semibold">Day Pass</h3>
-                    <span className="text-2xl font-bold text-amber-600">$15</span>
+                    <span className="text-2xl font-bold text-amber-600">₦15</span>
                   </div>
                   <p className="text-sm text-gray-600">Full day access with one coffee included</p>
                 </div>
@@ -192,7 +192,7 @@ export default function Cafe() {
                 <div className="border rounded-lg p-4">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-semibold">Monthly Pass</h3>
-                    <span className="text-2xl font-bold text-blue-600">$200</span>
+                    <span className="text-2xl font-bold text-blue-600">₦200</span>
                   </div>
                   <p className="text-sm text-gray-600">Unlimited access + 10 free coffees</p>
                 </div>
@@ -246,7 +246,7 @@ export default function Cafe() {
                       <CardContent className="p-4">
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="font-semibold">{item.name}</h3>
-                          <span className="font-bold text-amber-600">${item.price}</span>
+                          <span className="font-bold text-amber-600">₦{item.price}</span>
                         </div>
                         <p className="text-sm text-gray-600">{item.description}</p>
                       </CardContent>
@@ -262,7 +262,7 @@ export default function Cafe() {
                       <CardContent className="p-4">
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="font-semibold">{item.name}</h3>
-                          <span className="font-bold text-amber-600">${item.price}</span>
+                          <span className="font-bold text-amber-600">₦{item.price}</span>
                         </div>
                         <p className="text-sm text-gray-600">{item.description}</p>
                       </CardContent>
